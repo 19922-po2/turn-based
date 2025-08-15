@@ -1,0 +1,85 @@
+.damage-hp-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 10px;
+  /* width: 250px; */
+  /* margin: 20px; */
+  margin-bottom: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.level-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.level-number {
+  color: #00ff9d;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0, 255, 157, 0.6);
+  animation: levelGlow 2s ease-in-out infinite;
+}
+
+.hp-bar {
+  height: 20px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff3366, #ff0099);
+  transition: width 0.3s ease;
+}
+
+.damage-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 0, 0, 0.2);
+  animation: damageFlash 0.5s ease-out;
+}
+
+.hp-label {
+  position: absolute;
+  top: 50%;
+  left: 90px;
+  transform: translateY(-50%);
+  color: #00ff9d;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes damageFlash {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes levelGlow {
+  0% {
+    text-shadow: 0 0 8px rgba(0, 255, 157, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 255, 157, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(0, 255, 157, 0.6);
+  }
+}

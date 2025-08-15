@@ -1,0 +1,10 @@
+<div class="damage-hp-container">
+  <div class="level-display">
+    <span class="level-number">Lvl {{ level }}</span>
+  </div>
+  <div class="hp-bar">
+    <div class="hp-fill" [style.width]="hp + '%'"></div>
+    <div class="damage-flash" *ngIf="showDamage"></div>
+  </div>
+  <div class="hp-label">{{ hp }}/{{ maxHp }}</div>
+</div>
